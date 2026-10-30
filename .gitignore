@@ -78,3 +78,10 @@ tmp/
 temp/
 *.tmp
 *.bak
+
+# Local Docker Compose backups
+docker-compose.yml.bak_*
+
+# Flutter local diagnostics and code backups
+gradle_error_log.txt
+*.dart.bak_*

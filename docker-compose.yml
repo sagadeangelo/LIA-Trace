@@ -17,7 +17,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
 
     ports:
-      - "127.0.0.1:5432:5432"
+      - "192.168.1.65:8000:8000"
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -46,7 +46,7 @@ services:
       DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-lia_trace}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:-lia_trace}
 
     ports:
-      - "127.0.0.1:8000:8000"
+      - "192.168.1.65:8000:8000"
 
     depends_on:
       db:

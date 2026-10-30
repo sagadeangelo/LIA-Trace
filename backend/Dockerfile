@@ -7,15 +7,23 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PIP_NO_CACHE_DIR=1
 
+# Copiar configuracion del proyecto
 COPY pyproject.toml ./
+
+# Copiar codigo del backend
 COPY app ./app
+
+# Copiar pruebas automaticas
+COPY tests ./tests
 
 # Archivos necesarios para las migraciones
 COPY alembic.ini ./alembic.ini
 COPY alembic ./alembic
 
-RUN pip install --no-cache-dir .
+# Instalar dependencias principales y de desarrollo
+RUN pip install --no-cache-dir ".[dev]"
 
+# Ejecutar la aplicacion con usuario sin privilegios
 RUN useradd --create-home appuser
 USER appuser
 

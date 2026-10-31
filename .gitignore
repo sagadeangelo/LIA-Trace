@@ -85,3 +85,8 @@ docker-compose.yml.bak_*
 # Flutter local diagnostics and code backups
 gradle_error_log.txt
 *.dart.bak_*
+
+# Gradle Wrapper - archivos necesarios para compilar Android
+!**/gradlew
+!**/gradlew.bat
+!**/gradle/wrapper/gradle-wrapper.jar
